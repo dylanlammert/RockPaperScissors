@@ -81,7 +81,15 @@ function playGame() {
     for(let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice(3));
     }
-    console.log((humanScore > computerScore) ? 'You won the game!! ' + humanScore: 'The computer won the game!! ' + computerScore);
+    if(humanScore > computerScore) {
+        console.log("You won the game!! " + humanScore + " : " + computerScore);
+    }
+    else if(computerScore > humanScore) {
+        console.log("You lost!! " + computerScore + " : " + humanScore);
+    }
+    else {
+        console.log("You Tied!! " + computerScore + " : " + humanScore);
+    }
 }
 
 playGame();
