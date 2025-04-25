@@ -22,7 +22,9 @@ function getHumanChoice() {
 // Initialize variables in global scope
 let humanScore = 0;
 let computerScore = 0;
-let winner = ""
+let message = "";
+
+
 function playRound(humanChoice, computerChoice) {
     let inputChoice = humanChoice.toLowerCase();
     console.log(humanChoice);
@@ -30,14 +32,14 @@ function playRound(humanChoice, computerChoice) {
         case "rock":
             switch(computerChoice) {
                 case "paper":
-                    console.log("You lose! Paper beats Rock.");
+                    sendAnnouncement("You lose this round! Paper beats Rock.");
                     computerScore = computerScore + 1;
                     break;
                 case "rock":
-                    console.log("You Tied!");
+                    sendAnnouncement("You Tied!");
                     break;
                 case "scissors":
-                    console.log("You win! Rock beats Scissors.");
+                    sendAnnouncement("You win this round! Rock beats Scissors.");
                     humanScore = humanScore + 1;
                     break;
             }
@@ -46,14 +48,14 @@ function playRound(humanChoice, computerChoice) {
         case "paper":
             switch(computerChoice) {
                 case "paper":
-                    console.log("You Tied! ");
+                    sendAnnouncement("You Tied! ");
                     break;
                 case "rock":
-                    console.log("You win! Paper beats Rock.")
+                    sendAnnouncement("You win this round! Paper beats Rock.")
                     humanScore = humanScore + 1;
                     break;
                 case "scissors":
-                    console.log("You lose! Scissors beats Paper")
+                    sendAnnouncement("You lose this round! Scissors beats Paper")
                     computerScore = computerScore + 1;
                     break;
             }
@@ -62,15 +64,15 @@ function playRound(humanChoice, computerChoice) {
         case "scissors":
             switch(computerChoice) {
                 case "paper":
-                    console.log("You win! Scissors beats Paper.");
+                    sendAnnouncement("You win this round! Scissors beats Paper.");
                     humanScore = humanScore + 1;
                     break;
                 case "rock":
-                    console.log("You lose! Rock beats Scissor.")
+                    sendAnnouncement("You lose this round! Rock beats Scissor.")
                     computerScore = computerScore + 1;
                     break;
                 case "scissors":
-                    console.log("You Tied!")
+                    sendAnnouncement("You Tied!")
                     break; 
             }
         break;
@@ -80,13 +82,13 @@ function playRound(humanChoice, computerChoice) {
     if(humanScore >= 5 || computerScore >= 5) {
         // show who wins
         if(humanScore == 5) {
-            winner = "You Win!!!";
+            message = "You Won the Game!!!";
         }
         else {
-            winner = "You Lose!!! Better luck next time!";
+            message = "You Lose!!! Better luck next time!";
         }
         //place the winner text on screen
-        createWinnerArea();
+        sendAnnouncement(message);
         // reset the scores
         humanScore = 0;
         computerScore = 0;
@@ -97,14 +99,13 @@ function playRound(humanChoice, computerChoice) {
 
 function sendAnnouncement(message) {
     console.log(message);
-    const winnerDiv = document.createElement("div");
-    winnerDiv.setAttribute("style", "background-color: yellow; font-size: 32px; padding: 32px; text-align: center; border: 5px dashed black;" )
-    winnerDiv.textContent = winner;
-    winnerArea.appendChild(winnerDiv);
+    const announcement = document.querySelector("#message");
+    announcement.textContent = message;
+    console.log("message set")
 
     setTimeout(() => {
-        winnerArea.textContent = "";
-    }, 2000);
+        announcement.textContent = "";
+    }, 1500);
 }
 
 // add event listeners to each button that plays a round when user

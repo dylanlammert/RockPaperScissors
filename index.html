@@ -15,14 +15,26 @@
 <body class="silkscreen-regular">
     <section class="intro">
         <h1>ROCK PAPER SCISSORS</h1>
-        <p><strong>Can you beat the bot?</strong> you are playing against<br> the computer. Select one of the options
-        below and<br> see if you win.</p>
+        <div class="description">
+            <p><strong>Can you beat the bot?</strong> you are playing against the computer. Select one of the options
+            below and see if you win.</p>
+        </div>
     </section>
-    <section id="winnerArea">
-        
-    </section>
-    
+
+    <!-- Score board Section -->
+
     <section>
+        <div class="soundMenu">
+            <div>
+                <label>Music</label>
+                <input type="checkbox">
+            </div>
+            <div>
+                <label>Sound Efffects</label>
+                <input type="checkbox">
+            </div>
+        </div>
+
         <table class="scoreboard">
             <thead>
                 <tr>
@@ -39,9 +51,14 @@
             </tr>
         </table>
     </section>
+    
+    <!-- place game announcements here -->
+
     <section id="announcements">
         <img class="announcementsIMG" src="./rockpaperscissorsimg.jpg">
+        <div id="message"></div>
     </section>
+
     <section class = "selection">
         <img src="./emergency_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
         <button id ="rockInput" class="silkscreen-regular">Rock</button>

@@ -1,4 +1,38 @@
-/* */
+/* 
+    create media query to change the size of the 
+    font in the score board on smaller screens
+*/
+
+@media only screen and (min-width: 600px){
+    .scoreboard th, 
+    .scoreboard td, 
+    #announcements, 
+    h1 {
+        font-size: 32px;
+    }
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .scoreboard th, 
+    .scoreboard td, 
+    #announcements {
+        font-size: 16px;
+    }
+    .description {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .scoreboard th,
+    .scoreboard td, 
+    #announcements {
+        font-size: 64px;
+    }
+}
 
 .silkscreen-regular {
     font-family: "Silkscreen", sans-serif;
@@ -12,16 +46,32 @@
     font-style: normal;
 }
 
-
-.intro {
-    margin:16px;
+.soundMenu {
+    width: fit-content;
+    padding: 8px 32px;
+    display: flex;
+    justify-self:  center;
+    font-size: 12px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 237, 164);
+    border: 2px solid black;
+    gap: 8px;
+}
+.intro {
+    text-align: center;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .scoreboard {
-    width: 300px;
+    width: auto;
+    justify-self: center;
     border-collapse: collapse;
-    margin: 32px auto;
+    padding: 32px;
     background-color: #1c1c1c;
     color: #fff; 
     border-radius: 25px;
@@ -32,7 +82,6 @@
 .scoreboard td {
     padding: 16px;
     text-align: center;
-    font-size: 32px;
 }
 
 .selection {
@@ -45,16 +94,32 @@
     border: 5px dashed greenyellow
 }
 #announcements {
-    height: 100px;
+    height: 200px;
     width: auto;
     margin: 8px 0;
     border: 5px solid black;
     overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
 }
+
 .announcementsIMG {
     height: auto;
     width: 100%;
     display: block;
+    opacity: 50%;
+}
+
+#message {
+    position: absolute;
+    color: #fff; 
+    padding: 10px 20px; 
+    text-align: center;
+}
+
 button  {
     background-color:rgb(102, 150, 31);
     color: #3dffce;
