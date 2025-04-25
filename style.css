@@ -1,0 +1,156 @@
+/* 
+    create media query to change the size of the 
+    font in the score board on smaller screens
+*/
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+@media only screen and (min-width: 600px){
+    .scoreboard th, 
+    .scoreboard td, 
+    #announcements, 
+    h1 {
+        font-size: 32px;
+    }
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .scoreboard th, 
+    .scoreboard td, 
+    #announcements {
+        font-size: 16px;
+    }
+    .description {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .scoreboard th,
+    .scoreboard td, 
+    #announcements {
+        font-size: 64px;
+    }
+}
+
+.silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+label {
+    height: 50px;
+    display: flex   ;
+    align-items: center;
+    justify-content: start;
+}
+.soundMenu {
+    width: fit-content;
+    padding: 0px 32px;
+    gap: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-self:  center;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 237, 164);
+    border: 2px solid black;
+    
+}
+input[type="checkbox"]{
+    -webkit-appearance: initial;
+    appearance: initial;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+}
+input[type="checkbox"]:checked {
+    content: url("./skull_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+}
+.intro {
+    text-align: center;
+    padding: 0 24px;
+    margin:0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard {
+    width: auto;
+    justify-self: center;
+    border-collapse: collapse;
+    padding: 32px;
+    background-color: #1c1c1c;
+    color: #fff; 
+    border-radius: 25px;
+    
+}
+
+.scoreboard th, 
+.scoreboard td {
+    padding: 16px;
+    text-align: center;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background-color: black;
+    padding: 16px;
+    margin: 0px;
+    border: 5px dashed greenyellow
+}
+#announcements {
+    height: 200px;
+    width: auto;
+    margin: 8px 0;
+    border: 5px solid black;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.announcementsIMG {
+    height: auto;
+    width: 100%;
+    display: block;
+    opacity: 50%;
+}
+
+#message {
+    position: absolute;
+    color: #fff; 
+    padding: 10px 20px; 
+    text-align: center;
+}
+
+button  {
+    background-color:rgb(102, 150, 31);
+    color: #3dffce;
+}
+

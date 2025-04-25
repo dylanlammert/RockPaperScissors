@@ -4,10 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="./game.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- audio files -->
+     <audio id="lofiMusic">
+        <source src="./Sound/lofi-girl-lofi-hiphop-beats-328180.mp3" type="audio/mp3">
+     </audio>
+     
+     <audio id="keyboardClick">
+        <source src="./Sound/keyboard-click-327728.mp3" type="audio/mp3">
+     </audio>
+    <!-- Google Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="silkscreen-regular">
+    <section class="intro">
+        <h1>ROCK PAPER SCISSORS</h1>
+        <div class="description">
+            <p><strong>Can you beat the bot?</strong> you are playing against the computer. Select one of the options
+            below and see if you win.</p>
+        </div>
+    </section>
+
+    <!-- Score board Section -->
+
+    <section>
+        <div class="soundMenu">
+            <div>
+                <label for="musicToggle">Music
+                    <input id="musicToggle" type="checkbox">
+                    <span class="checkPNG"></span>
+                </label>
+            </div>
+            <div>
+                <label for="soundToggle">Sound Efffects
+                    <input id="soundToggle" class="customCheckbox" type="checkbox">
+                </label>
+                
+            </div>
+        </div>
+
+        <table class="scoreboard">
+            <thead>
+                <tr>
+                    <th>computer</th>
+                    <th></th>
+                    <th>player</th>
+                </tr>
+                
+            </thead>
+            <tr>
+                <td id="computerScore">0</td>
+                <td> : </td>
+                <td id="playerScore">0</td>
+            </tr>
+        </table>
+    </section>
     
-    
+    <!-- place game announcements here -->
+
+    <section id="announcements">
+        <img class="announcementsIMG" src="./images/rockpaperscissorsimg.jpg">
+        <div id="message"></div>
+    </section>
+
+    <section class = "selection">
+        <img src="./images/emergency_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+        <button id ="rockInput" class="silkscreen-regular">Rock</button>
+        <button id = "paperInput" class="silkscreen-regular">Paper</button>
+        <button id = "scissorsInput" class="silkscreen-regular">Scissors</button>
+        <img src="./images/emergency_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </section>
 </body>
+<script src="./game.js"></script>
 </html>
