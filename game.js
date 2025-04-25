@@ -22,10 +22,10 @@ function getHumanChoice() {
 // Initialize variables in global scope
 let humanScore = 0;
 let computerScore = 0;
-
+let winner = ""
 function playRound(humanChoice, computerChoice) {
     let inputChoice = humanChoice.toLowerCase();
-    console.log(inputChoice);
+    console.log(humanChoice);
     switch(inputChoice) {
         case "rock":
             switch(computerChoice) {
@@ -75,22 +75,61 @@ function playRound(humanChoice, computerChoice) {
             }
         break;
     }
+    computerScoreText.textContent = computerScore;
+    playerScoreText.textContent = humanScore;
+    if(humanScore >= 5 || computerScore >= 5) {
+        // show who wins
+        if(humanScore == 5) {
+            winner = "You Win!!!";
+        }
+        else {
+            winner = "You Lose!!! Better luck next time!";
+        }
+        //place the winner text on screen
+        createWinnerArea();
+        // reset the scores
+        humanScore = 0;
+        computerScore = 0;
+    }
+
+
 }
 
-function playGame() {
-    for(let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice(3));
-    }
-    if(humanScore > computerScore) {
-        console.log("You won the game!! " + humanScore + " : " + computerScore);
-    }
-    else if(computerScore > humanScore) {
-        console.log("You lost!! " + computerScore + " : " + humanScore);
-    }
-    else {
-        console.log("You Tied!! " + computerScore + " : " + humanScore);
-    }
+function sendAnnouncement(message) {
+    console.log(message);
+    const winnerDiv = document.createElement("div");
+    winnerDiv.setAttribute("style", "background-color: yellow; font-size: 32px; padding: 32px; text-align: center; border: 5px dashed black;" )
+    winnerDiv.textContent = winner;
+    winnerArea.appendChild(winnerDiv);
+
+    setTimeout(() => {
+        winnerArea.textContent = "";
+    }, 2000);
 }
 
-playGame();
+// add event listeners to each button that plays a round when user
+// presses a button
+
+// grab references to the ID's of each button
+const announcementArea = document.querySelector("#announcements");
+const rockInput = document.querySelector("#rockInput");
+const paperInput = document.querySelector("#paperInput");
+const scissorsInput = document.querySelector("#scissorsInput");
+const playerScoreText = document.querySelector("#playerScore");
+const computerScoreText = document.querySelector("#computerScore");
+
+rockInput.addEventListener("click", () => {
+    let playerInput = rockInput.textContent;
+    playRound(playerInput, getComputerChoice(3));
+});
+
+paperInput.addEventListener("click", () => {
+    let playerInput = paperInput.textContent;
+    playRound(playerInput, getComputerChoice(3));
+});
+
+scissorsInput.addEventListener("click", () => {
+    let playerInput = scissorsInput.textContent;
+    playRound(playerInput, getComputerChoice(3));
+});
 

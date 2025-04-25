@@ -1,0 +1,61 @@
+/* */
+
+.silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  .silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.intro {
+    margin:16px;
+    text-align: center;
+}
+
+.scoreboard {
+    width: 300px;
+    border-collapse: collapse;
+    margin: 32px auto;
+    background-color: #1c1c1c;
+    color: #fff; 
+    border-radius: 25px;
+    
+}
+
+.scoreboard th, 
+.scoreboard td {
+    padding: 16px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background-color: black;
+    padding: 16px;
+    margin: 0px;
+    border: 5px dashed greenyellow
+}
+#announcements {
+    height: 100px;
+    width: auto;
+    margin: 8px 0;
+    border: 5px solid black;
+    overflow: hidden;
+}
+.announcementsIMG {
+    height: auto;
+    width: 100%;
+    display: block;
+button  {
+    background-color:rgb(102, 150, 31);
+    color: #3dffce;
+}
