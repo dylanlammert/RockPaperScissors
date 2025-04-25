@@ -19,10 +19,7 @@ function getHumanChoice() {
     return choice
 };
 
-// Initialize variables in global scope
-let humanScore = 0;
-let computerScore = 0;
-let message = "";
+
 
 
 function playRound(humanChoice, computerChoice) {
@@ -108,6 +105,36 @@ function sendAnnouncement(message) {
     }, 1500);
 }
 
+function toggleMusic() {
+    //pause audio
+}
+function toggleSoundEffects() {
+    //set soundEffects to false
+}
+function playSoundEffect() {
+    if(soundEffects) {
+        console.log("music checkbox is checked");
+        buttonClick.play();
+    }
+    else{
+        console.log("music checkbox is unchecked");
+        
+    }
+    
+}
+// Initialize variables in global scope
+let soundEffects = false;
+let humanScore = 0;
+let computerScore = 0;
+let message = "";
+
+
+// grab references to checkboxes 
+const musicToggleButton = document.querySelector("#musicToggle");
+const soundToggleButton = document.querySelector("#soundToggle");
+// grab reference to music audio file
+const musicfile = document.querySelector("#lofiMusic");
+const buttonClick = document.querySelector("#keyboardClick");
 // add event listeners to each button that plays a round when user
 // presses a button
 
@@ -119,18 +146,44 @@ const scissorsInput = document.querySelector("#scissorsInput");
 const playerScoreText = document.querySelector("#playerScore");
 const computerScoreText = document.querySelector("#computerScore");
 
+musicToggleButton.addEventListener("change", (e) => {
+    if(e.target.checked) {
+        console.log("music checkbox is checked");
+        musicfile.play();
+        musicfile.loop = true;
+    }
+    else if(!e.target.checked) {
+        console.log("music checkbox is unchecked");
+        musicfile.pause();
+    }
+})
+
+soundToggleButton.addEventListener("change", (e) => {
+    if(e.target.checked) {
+        console.log("sound checkbox is checked");
+        soundEffects = true;
+    }
+    else if(!e.target.checked) {
+        console.log("sound checkbox is unchecked");
+        soundEffects = false;
+    }
+})
+
 rockInput.addEventListener("click", () => {
     let playerInput = rockInput.textContent;
+    playSoundEffect();
     playRound(playerInput, getComputerChoice(3));
 });
 
 paperInput.addEventListener("click", () => {
     let playerInput = paperInput.textContent;
+    playSoundEffect();
     playRound(playerInput, getComputerChoice(3));
 });
 
 scissorsInput.addEventListener("click", () => {
     let playerInput = scissorsInput.textContent;
+    playSoundEffect();
     playRound(playerInput, getComputerChoice(3));
 });
 

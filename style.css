@@ -2,7 +2,15 @@
     create media query to change the size of the 
     font in the score board on smaller screens
 */
-
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
 @media only screen and (min-width: 600px){
     .scoreboard th, 
     .scoreboard td, 
@@ -40,15 +48,23 @@
     font-style: normal;
 }
   
-  .silkscreen-bold {
+.silkscreen-bold {
     font-family: "Silkscreen", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
+label {
+    height: 50px;
+    display: flex   ;
+    align-items: center;
+    justify-content: start;
+}
 .soundMenu {
     width: fit-content;
-    padding: 8px 32px;
+    padding: 0px 32px;
+    gap: 8px;
+    margin-bottom: 8px;
     display: flex;
     justify-self:  center;
     font-size: 12px;
@@ -57,11 +73,24 @@
     align-items: center;
     background-color: rgb(255, 237, 164);
     border: 2px solid black;
-    gap: 8px;
+    
+}
+input[type="checkbox"]{
+    -webkit-appearance: initial;
+    appearance: initial;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+}
+input[type="checkbox"]:checked {
+    content: url("./skull_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
 }
 .intro {
     text-align: center;
-    padding: 0 32px;
+    padding: 0 24px;
+    margin:0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,3 +153,4 @@ button  {
     background-color:rgb(102, 150, 31);
     color: #3dffce;
 }
+
